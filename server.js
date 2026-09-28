@@ -35,10 +35,10 @@ app.get('/gpus/new', (req,res) => {
 
 app.post('/gpus', async (req, res) => {
   try {
-    if (req.body.isCooledDown === 'on') {
-      req.body.isCooledDown = true;
+    if (req.body.isCoolDowned === 'on') {
+      req.body.isCoolDowned = true;
     } else {
-      req.body.isCooledDown = false;
+      req.body.isCoolDowned = false;
     }
 
     await Gpu.create(req.body);
@@ -93,10 +93,10 @@ app.get('/gpus/:id/edit', async (req, res) => {
 
 app.put('/gpus/:id', async (req, res) => {
   try {
-    if (req.body.isCooledDown === 'on') {
-      req.body.isCooledDown = true;
+    if (req.body.isCoolDowned === 'on') {
+      req.body.isCoolDowned = true;
     } else {
-      req.body.isCooledDown = false;
+      req.body.isCoolDowned = false;
     }
 
     await Gpu.findByIdAndUpdate(req.params.id, req.body);
